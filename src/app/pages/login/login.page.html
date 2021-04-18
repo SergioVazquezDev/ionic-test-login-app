@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Test Login App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <div class="mobile-logo-img-container">
+          <ion-img src="assets/img/logo.jpg" class="logo-img"></ion-img>
+        </div>
+
+        <ion-card class="login-card" no-padding >
+          <ion-card-header>
+            <div class="desktop-logo-img-container">
+            <ion-img src="assets/img/logo.jpg" class="logo-img"></ion-img>
+          </div>
+            <ion-card-title class="login-card-title">Prueba técnica</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <form (ngSubmit)="submitForm()" [formGroup]="credentials">
+              <div class="input-group">
+                <ion-item>
+                  <ion-icon name="person-outline" slot="start" #emailIcon></ion-icon>
+                  <ion-label position="floating">Email</ion-label>
+                  <ion-input type="email" formControlName="email"></ion-input>
+                </ion-item>
+          
+                <div *ngIf="isSubmitted && credentialsControl.email.errors" class="errors">
+                  <span *ngIf="credentialsControl.email.errors?.required">El email es obligatorio</span>
+                  <span *ngIf="credentialsControl.email.errors?.email">El email introducido no es válido</span>
+                </div>
+          
+                <ion-item>
+                  <ion-icon name="lock-closed-outline" slot="start" #passwordIcon></ion-icon>
+                  <ion-label position="floating">Contraseña</ion-label>
+                  <ion-input position="floating" type="password" formControlName="password"></ion-input>
+                </ion-item>
+                <div *ngIf="isSubmitted && credentialsControl.password.errors" class="errors">
+                  <span *ngIf="credentialsControl.password.errors?.required">La contraseña es obligatoria</span>
+                  <span *ngIf="credentialsControl.password.errors?.minlength">La contraseña debe tener al menos 5 caracteres</span>
+                </div>
+                <ion-item lines="none" class="remember-toggle-item">
+                  <ion-label>Recordar</ion-label>
+                  <ion-toggle [ngModel]="credentialsControl.remember.value" (ionChange)="rememberChangeValue()" [ngModelOptions]="{standalone: true}" class="remember-toggle"></ion-toggle>
+                </ion-item>
+              </div>
+
+              <ion-grid class="login-button-container ion-no-padding">
+                <ion-row>
+                  <ion-col size="12" class="ion-text-center ion-no-padding">
+                    <ion-button type="submit" class="login-button">Acceder</ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </form>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <div class="social-singin-container">
+          <ion-button type="button" expand="block">
+            <ion-icon name="logo-google" slot="start"></ion-icon>
+            Iniciar sesión con Google
+          </ion-button>
+          <ion-button type="button" expand="block" color="medium">
+            <ion-icon name="logo-apple" slot="start"></ion-icon>
+            Iniciar sesión con Apple
+          </ion-button>
+          <ion-button type="button" color="light" fill="clear" class="singin-button">¿Aún no eres miembro? Regístrate aquí</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>>
+  </ion-grid>
+  
+  <ion-item>
+    <ion-label position="stacked">Para probar el login en esta demo</ion-label>
+    <ion-textarea
+      disabled
+      readonly
+      value="Email: eve.holt@reqres.in, Contraseña: admin">
+    </ion-textarea>
+  </ion-item>
+  
+</ion-content>

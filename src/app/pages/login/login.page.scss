@@ -1,0 +1,193 @@
+ion-content {
+  --background: url("/assets/img/background.jpg") no-repeat center center /
+    cover;
+}
+
+.login-card {
+  width: 450px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  border-radius: 0;
+}
+
+// .logo-img {
+//   height: 150px;
+//   clip-path: inset(0px 100px 0px 10px);
+//   margin: 20px 0px 30px 100px;
+// }
+
+.desktop-logo-img-container {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  margin: auto;
+  position: relative;
+}
+
+.desktop-logo-img-container > .logo-img {
+  position: absolute;
+  right: -50%;
+  top: 0px;
+  bottom: 0px;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.mobile-logo-img-container {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 15px;
+  position: relative;
+}
+.mobile-logo-img-container > .logo-img {
+  position: absolute;
+  right: -50%;
+  top: 0px;
+  bottom: 0px;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.card-content-ios,
+.card-content-md {
+  padding: 0px;
+}
+
+.login-card-title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.input-group {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 15px 15px 0px 15px;
+
+  ion-icon {
+    padding-top: 10px;
+  }
+
+  .remember-toggle-item {
+    font-weight: bold;
+    padding: 8px;
+
+    .remember-toggle {
+      padding-right: 0px;
+    }
+  }
+}
+
+.errors {
+  font-size: small;
+  color: var(--ion-color-danger);
+  background: transparent;
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.social-singin-container {
+  margin-top: 30px;
+}
+
+.singin-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Desktop
+@media (min-width: 961px) {
+  .mobile-logo-img-container {
+    display: none;
+  }
+
+  .login-button {
+    width: 130px;
+    color: #000;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 20px;
+
+    // Round
+    --border-radius: 64px;
+    --padding-top: 0;
+    --padding-start: 26px;
+    --padding-end: 26px;
+    --padding-bottom: 0;
+    --border-width: 2px;
+    --border-style: solid;
+    --box-shadow: none;
+    --background-activated: transparent;
+    --background-focused: var(--ion-color-primary, #3880ff);
+    --background-hover: var(--ion-color-primary, #3880ff);
+    --background-activated-opacity: 0;
+    --background-focused-opacity: 0.12;
+    --background-hover-opacity: 0.04;
+
+    // Outline
+    --border-color: var(--ion-color-primary, #3880ff);
+    --background: transparent;
+    --color: var(--ion-color-primary, #3880ff);
+  }
+
+  .social-singin-container {
+    width: 450px;
+    margin: auto;
+  }
+}
+
+// Mobile
+@media (max-width: 960px) {
+  .desktop-logo-img-container {
+    display: none;
+  }
+
+  .login-card {
+    width: 90%;
+    margin-top: 20px;
+  }
+
+  ion-card-header {
+    display: none;
+  }
+
+  .input-group {
+    padding: 0px 15px;
+  }
+
+  .login-button-container {
+    // Solid
+    background-color: var(--ion-color-primary, #3880ff);
+    --background-activated: transparent;
+    --background-hover: var(--ion-color-primary-contrast, #fff);
+    --background-focused: var(--ion-color-primary-contrast, #fff);
+    --background-activated-opacity: 0;
+    --background-focused-opacity: 0.24;
+    --background-hover-opacity: 0.08;
+    --box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    --background: var(--ion-color-primary, #3880ff);
+    --color: var(--ion-color-primary-contrast, #fff);
+  }
+
+  .login-button {
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    --box-shadow: none;
+
+    // Block
+    display: block;
+  }
+
+  .social-singin-container {
+    width: 90%;
+    margin: auto;
+  }
+}
